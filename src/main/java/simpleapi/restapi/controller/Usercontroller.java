@@ -17,6 +17,11 @@ public class Usercontroller {
         this.userservice = userservice;
     }
 
+    @GetMapping("/") 
+    public String home() {
+        return "Welcome to the USER API";
+    }
+    
     @GetMapping("/user")
     public Usermodel getUser(@RequestParam Integer ID) {
         Optional <Usermodel> user = userservice.getUserbyID(ID);
